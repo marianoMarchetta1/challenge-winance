@@ -1,0 +1,2 @@
+export const SET_PEOPLE_LIST = 'SET_PEOPLE_LIST';
+export const SET_FETCHING = 'SET_FETCHING';
