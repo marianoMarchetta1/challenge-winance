@@ -16,7 +16,9 @@ const people = (state = initialState, action) => {
             return {
                 ...state,
                 isFetching: false,
-                list: [...action.list]
+                list: [...action.list],
+                previous: action.previous,
+                next: action.next
             }
         }
 

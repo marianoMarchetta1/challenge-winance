@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Wraper, Input, SearchButton } from './styled';
 
-const SearchForm = () => {
+const SearchForm = ({ applyFilter }) => {
+
+    const [filter, setFilter] = useState('');
+
     return (
         <Wraper>
-            <Input/>
-            <SearchButton>Search</SearchButton>
+            <Input onChange={(e) => setFilter(e.target.value)}/>
+            <SearchButton onClick={() => { applyFilter(filter) }}>Search</SearchButton>
         </Wraper>
     )
 }
