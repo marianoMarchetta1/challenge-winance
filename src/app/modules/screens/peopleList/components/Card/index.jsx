@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { DataContainer, ButtonContainer, CardBody, PersonName, PersonHeight, PersonGender, DeleteButton } from './styled';
 
 const Card = ({name, gender, height, removeFunction, index}) => {
@@ -20,6 +21,14 @@ const Card = ({name, gender, height, removeFunction, index}) => {
             </ButtonContainer>
         </CardBody>
     )
+}
+
+Card.propTypes = {
+    name: PropTypes.string.isRequired,
+    gender: PropTypes.string.isRequired,
+    height: PropTypes.string.isRequired,
+    removeFunction: PropTypes.func.isRequired,
+    index: PropTypes.number.isRequired
 }
 
 export default Card;
