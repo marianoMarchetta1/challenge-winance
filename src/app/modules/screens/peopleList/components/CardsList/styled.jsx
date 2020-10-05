@@ -47,3 +47,15 @@ export const Button = styled.button `
 export const NextButton = styled(Button) `
     float:right;
 `;
+
+export const Spinner = styled.div`
+    height: 80%;
+    background-color: darkgrey;
+    display: flex;
+    align-items: center;
+    justify-content: center
+`;
+
+export const SpinnerText = styled.p`
+
+`;

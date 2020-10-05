@@ -3,15 +3,13 @@ import '../../../../../../App.css';
 import { getPeopleList, getPeoplePage, getPeopleFiltered } from '../../services/PeopleServices';
 import Card from '../Card';
 import SearchForm from '../SearchForm';
-import { Wraper, ListContainer, SearchContainer, ButtonsContainer, Button, NextButton } from './styled';
+import { Wraper, ListContainer, SearchContainer, ButtonsContainer, Button, NextButton, Spinner, SpinnerText } from './styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { SET_PEOPLE_LIST, SET_FETCHING } from '../../../../redux/People/constants';
 
 const List = () => {
     const dispatch = useDispatch()
-    const peopleList = useSelector(state => state.People.list)
-    const nextPage = useSelector(state => state.People.next)
-    const previousPage = useSelector(state => state.People.previous)
+    const { list, next, previous, isFetching } = useSelector(state => state.People)
 
     useEffect(() => {
         const call = async () => {
@@ -23,14 +21,14 @@ const List = () => {
     }, [dispatch])
 
     function removeFunction(index){
-        let newList = peopleList;
+        let newList = list;
         newList.splice(index, 1);
-        dispatch({ type: SET_PEOPLE_LIST, list: newList })
+        dispatch({ type: SET_PEOPLE_LIST, list: newList, previous: previous, next: next })
     }
 
     async function getPage(page){
         dispatch({ type: SET_FETCHING });
-        const nextpage = page.replace('http://swapi.dev/api', '');
+        const nextpage = page.replace(process.env.REACT_APP_API, '');
         const response = await getPeoplePage(nextpage);
         dispatch({ type: SET_PEOPLE_LIST, list: response.response.data.results, previous: response.response.data.previous, next: response.response.data.next })
     }
@@ -46,16 +44,15 @@ const List = () => {
             <SearchContainer>
                 <SearchForm applyFilter={applyFilter}/>
             </SearchContainer>
-            <ListContainer>
-                {peopleList.map((person, index) => {
+            {!isFetching ? <ListContainer>
+                {list.map((person, index) => {
                     return <Card key={`card_${index}`} name={person.name} gender={person.gender} height={person.height} removeFunction={removeFunction} index={index}/>;
-                })}
-            </ListContainer>
+                })} </ListContainer> : <Spinner><SpinnerText>Loading...</SpinnerText></Spinner> }
             <ButtonsContainer>
-                <Button disabled={!previousPage} onClick={() => getPage(previousPage)}>
+                <Button disabled={!previous} onClick={() => getPage(previous)}>
                     Previous
                 </Button>
-                <NextButton disabled={!nextPage} onClick={() => getPage(nextPage)}>
+                <NextButton disabled={!next} onClick={() => getPage(next)}>
                     Next
                 </NextButton>
             </ButtonsContainer>
