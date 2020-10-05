@@ -1,11 +1,8 @@
 import React from 'react';
 import CardsList from './modules/screens/peopleList/components/CardsList';
 
-const Root = () =>{
-
-    return (
-        <CardsList/>
-    )
-}
+const Root = () => (
+  <CardsList />
+);
 
 export default Root;
