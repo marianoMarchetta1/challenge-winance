@@ -1,2 +1,3 @@
 export const SET_PEOPLE_LIST = 'SET_PEOPLE_LIST';
 export const SET_FETCHING = 'SET_FETCHING';
+export const GET_PEOPLE_ERROR = 'GET_PEOPLE_ERROR';

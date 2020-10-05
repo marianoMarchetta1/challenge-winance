@@ -25,6 +25,13 @@ export const ButtonsContainer = styled.div`
     padding-right: 10px;
 `;
 
+export const Container = styled.div`
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center
+`;
+
 export const Button = styled.button `
     background-color: ${props => !props.disabled ? 'lightgray' : 'white'};
     appearance: none;
@@ -48,14 +55,18 @@ export const NextButton = styled(Button) `
     float:right;
 `;
 
-export const Spinner = styled.div`
-    height: 80%;
+export const Spinner = styled(Container)`
     background-color: darkgrey;
-    display: flex;
-    align-items: center;
-    justify-content: center
 `;
 
 export const SpinnerText = styled.p`
+    color: white;
+`;
 
+export const ErrorMessage = styled.p`
+    color: red;
+`;
+
+export const NoDataText = styled.p`
+    color: black;
 `;

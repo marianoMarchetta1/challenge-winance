@@ -1,5 +1,5 @@
 import initialState from './initialState';
-import { SET_FETCHING, SET_PEOPLE_LIST } from './constants';
+import { SET_FETCHING, SET_PEOPLE_LIST, GET_PEOPLE_ERROR } from './constants';
 
 const people = (state = initialState, action) => {
   switch (action.type) {
@@ -7,6 +7,8 @@ const people = (state = initialState, action) => {
       return {
         ...state,
         isFetching: true,
+        error: false,
+        errorMessage: '',
       };
     }
 
@@ -17,6 +19,15 @@ const people = (state = initialState, action) => {
         list: [...action.list],
         previous: action.previous,
         next: action.next,
+      };
+    }
+
+    case GET_PEOPLE_ERROR: {
+      return {
+        ...state,
+        error: true,
+        errorMessage: 'An error has occurred',
+        isFetching: false,
       };
     }
 
