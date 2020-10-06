@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Wraper = styled.div`
     width: 450px;
     margin-left: 50px;
-    height: 100%;
+    height: 90%;
     position: absolute;
     padding-right: 20px;
     padding-bottom: 10px;
@@ -79,6 +79,7 @@ export const NextButton = styled(Button) `
 export const Spinner = styled(Container)`
     background-color: darkgrey;
     opacity: 0.4;
+    padding-bottom: 15px;
 `;
 
 export const SpinnerText = styled.p`
