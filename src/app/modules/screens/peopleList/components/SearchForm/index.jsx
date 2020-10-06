@@ -8,7 +8,7 @@ const SearchForm = ({ applyFilter }) => {
 
     return (
         <Wraper>
-            <Input onChange={(e) => setFilter(e.target.value)}/>
+            <Input onChange={(e) => setFilter(e.target.value)} onKeyPress={(e) => { if (e.key === 'Enter' || e.keyCode === 13) applyFilter(filter)}}/>
             <SearchButton onClick={() => { applyFilter(filter) }}>Search</SearchButton>
         </Wraper>
     )
