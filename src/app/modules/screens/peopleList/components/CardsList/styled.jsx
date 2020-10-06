@@ -13,6 +13,27 @@ export const Wraper = styled.div`
 export const ListContainer = styled.div`
     height: 80%;
     overflow-y: scroll;
+    padding-right: 15px;
+    padding-bottom: 15px;
+
+    &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+    &::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background: rgba(0,0,0,0.1);
+    }
+    &::-webkit-scrollbar-thumb{
+        border-radius: 10px;
+        background: rgba(0,0,0,0.2);
+    }
+    &::-webkit-scrollbar-thumb:hover{
+        background: rgba(0,0,0,0.4);
+    }
+    &::-webkit-scrollbar-thumb:active{
+        background: rgba(0,0,0,.9);
+    }
 `;
 
 export const SearchContainer = styled.div`
@@ -22,7 +43,7 @@ export const SearchContainer = styled.div`
 export const ButtonsContainer = styled.div`
     margin-top: 30px;
     padding-left: 10px;
-    padding-right: 10px;
+    padding-right: 35px;
 `;
 
 export const Container = styled.div`
@@ -57,10 +78,11 @@ export const NextButton = styled(Button) `
 
 export const Spinner = styled(Container)`
     background-color: darkgrey;
+    opacity: 0.4;
 `;
 
 export const SpinnerText = styled.p`
-    color: white;
+    color: black;
 `;
 
 export const ErrorMessage = styled.p`

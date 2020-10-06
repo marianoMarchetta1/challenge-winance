@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Button } from '../CardsList/styled';
 
 export const Wraper = styled.div`
     width: 60%;
@@ -14,22 +15,6 @@ export const Input = styled.input`
     outline: none;
 `;
 
-export const SearchButton = styled.button`
+export const SearchButton = styled(Button)`
     float: right;
-    background-color: lightgray;
-    appearance: none;
-    color: black;
-    width: 80px;
-    height: 30px;
-    border: 1px solid gray;
-    border-radius: 8px;
-    -webkit-box-shadow: 5px 4px 5px 0px rgba(171,162,171,1);
-    -moz-box-shadow: 5px 4px 5px 0px rgba(171,162,171,1);
-    box-shadow: 5px 4px 5px 0px rgba(171,162,171,1);
-    outline: none;
-
-    &:hover {
-        background-color: gray;
-        color: white;
-    }
 `;

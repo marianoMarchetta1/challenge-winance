@@ -2,33 +2,35 @@ import styled from 'styled-components'
 
 export const CardBody = styled.div`
     height: 120px;
-    border: 1px solid gray;
     margin-top: 15px;
-    border-radius: 5px;
-    -webkit-box-shadow: 7px 7px 5px 0px rgba(189,189,189,1);
-    -moz-box-shadow: 7px 7px 5px 0px rgba(189,189,189,1);
-    box-shadow: 7px 7px 5px 0px rgba(189,189,189,1);
+    -webkit-box-shadow: 5px 4px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 5px 4px 0px rgba(0, 0, 0, 0.2);
     padding-left: 15px;
     padding-right: 15px;
+    background: #FFFFFF;
+    border: 1px solid #A1A1A1;
+    box-sizing: border-box;
+    box-shadow: 5px 4px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 9px;
 `;
 
 export const PersonName = styled.p`
-    font-weight: bold;
-    font-size: 18px;
+    color: #535353;
     margin-bottom: 5px;
     margin-top: 20px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 20px;
 `;
 
-export const PersonHeight = styled.p`
-    margin-top: 0;
-    font-size: 14px;
+export const PersonDataField = styled.p`
+    margin-top: 9px;
     margin-bottom: 5px;
-`;
-
-export const PersonGender = styled.p`
-    margin-top: 0;
-    font-size: 14px;
-    margin-bottom: 5px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 15px;
 `;
 
 export const DataContainer = styled.div`

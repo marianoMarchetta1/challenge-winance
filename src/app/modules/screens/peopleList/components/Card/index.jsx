@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { DataContainer, ButtonContainer, CardBody, PersonName, PersonHeight, PersonGender, DeleteButton } from './styled';
+import { DataContainer, ButtonContainer, CardBody, PersonName, PersonDataField, DeleteButton } from './styled';
 
 const Card = ({name, gender, height, removeFunction, index}) => {
     return (
@@ -9,12 +9,12 @@ const Card = ({name, gender, height, removeFunction, index}) => {
                 <PersonName>
                     {name}
                 </PersonName>
-                <PersonHeight>
+                <PersonDataField>
                     {`Height: ${height}`}
-                </PersonHeight>
-                <PersonGender>
+                </PersonDataField>
+                <PersonDataField>
                     {`Gender: ${gender}`}
-                </PersonGender>
+                </PersonDataField>
             </DataContainer>
             <ButtonContainer>
                 <DeleteButton onClick={() => removeFunction(index)}>Delete</DeleteButton>
