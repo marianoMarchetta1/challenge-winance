@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
-import '../../../../../../App.css';
 import { getPeopleList, getPeoplePage, getPeopleFiltered } from '../../services/PeopleServices';
 import Card from '../Card';
 import SearchForm from '../SearchForm';
-import { Wraper,
+import { Wrapper,
          ListContainer,
          SearchContainer,
          ButtonsContainer,
@@ -16,6 +15,7 @@ import { Wraper,
          NoDataText} from './styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { SET_PEOPLE_LIST, SET_FETCHING, GET_PEOPLE_ERROR } from '../../../../redux/People/constants';
+import { GrNext as Next, GrPrevious as Previous } from 'react-icons/gr';
 
 const List = () => {
     const dispatch = useDispatch()
@@ -62,7 +62,7 @@ const List = () => {
     }
 
     return (
-        <Wraper>
+        <Wrapper>
             <SearchContainer>
                 <SearchForm applyFilter={applyFilter}/>
             </SearchContainer>
@@ -75,13 +75,13 @@ const List = () => {
             {error ? <Container><ErrorMessage>{errorMessage}</ErrorMessage></Container> : null}
             <ButtonsContainer>
                 <Button disabled={!previous} onClick={() => getPage(previous)}>
-                    Previous
+                    <Previous/>
                 </Button>
                 <NextButton disabled={!next} onClick={() => getPage(next)}>
-                    Next
+                    <Next/>
                 </NextButton>
             </ButtonsContainer>
-        </Wraper>
+        </Wrapper>
     );
 }
 

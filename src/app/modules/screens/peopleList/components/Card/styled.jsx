@@ -5,10 +5,9 @@ export const CardBody = styled.div`
     margin-top: 15px;
     -webkit-box-shadow: 5px 4px 0px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 5px 4px 0px rgba(0, 0, 0, 0.2);
-    padding-left: 15px;
+    padding-left: 30px;
     padding-right: 15px;
     background: #FFFFFF;
-    border: 1px solid #A1A1A1;
     box-sizing: border-box;
     box-shadow: 5px 4px 0px rgba(0, 0, 0, 0.2);
     border-radius: 9px;
@@ -42,7 +41,7 @@ export const ButtonContainer = styled.div`
     width: 30%;
     display: inline-block;
     vertical-align: top;
-    margin-top: 20px;
+    margin-top: 40px;
 `;
 
 export const DeleteButton = styled.button`
@@ -58,6 +57,7 @@ export const DeleteButton = styled.button`
     -moz-box-shadow: 5px 4px 5px 0px rgba(171,162,171,1);
     box-shadow: 5px 4px 5px 0px rgba(171,162,171,1);
     outline: none;
+    cursor: pointer;
 
     &:hover {
         background-color: gray;

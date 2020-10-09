@@ -1,28 +1,27 @@
 import styled from 'styled-components'
 
-export const Wraper = styled.div`
+export const Wrapper = styled.div`
     width: 450px;
-    margin-left: 50px;
     height: 90%;
     position: absolute;
     padding-right: 20px;
     padding-bottom: 10px;
     margin-top: 50px;
+    left: calc(50% - 225px);
 `;
 
 export const ListContainer = styled.div`
     height: 80%;
     overflow-y: scroll;
-    padding-right: 15px;
+    padding-right: 25px;
     padding-bottom: 15px;
 
     &::-webkit-scrollbar {
-        width: 6px;
+        width: 4px;
         height: 6px;
     }
     &::-webkit-scrollbar-track {
         border-radius: 10px;
-        background: rgba(0,0,0,0.1);
     }
     &::-webkit-scrollbar-thumb{
         border-radius: 10px;
@@ -42,8 +41,6 @@ export const SearchContainer = styled.div`
 
 export const ButtonsContainer = styled.div`
     margin-top: 30px;
-    padding-left: 10px;
-    padding-right: 35px;
 `;
 
 export const Container = styled.div`
@@ -56,19 +53,30 @@ export const Container = styled.div`
 export const Button = styled.button `
     background-color: ${props => !props.disabled ? 'lightgray' : 'white'};
     appearance: none;
-    color: ${props => !props.disabled ? 'black' : 'gray'};
-    width: 80px;
-    height: 30px;
+    width: 45px;
+    height: 35px;
     border: 1px solid gray;
-    border-radius: 8px;
+    border-radius: 20px;
     -webkit-box-shadow: 5px 4px 5px 0px rgba(171,162,171,1);
     -moz-box-shadow: 5px 4px 5px 0px rgba(171,162,171,1);
     box-shadow: 5px 4px 5px 0px rgba(171,162,171,1);
     outline: none;
+    cursor: pointer;
 
     &:hover {
         background-color: ${props => !props.disabled ? 'gray' : ''};
-        color: ${props => !props.disabled ? 'white' : ''};
+        
+        polyline {
+            stroke: ${props => !props.disabled ? 'white' : ''};
+        }
+    }
+
+    svg {
+        height: 10px;
+    }
+
+    polyline {
+        stroke: ${props => !props.disabled ? 'black' : 'gray'};
     }
 `;
 
