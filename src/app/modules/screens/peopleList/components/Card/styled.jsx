@@ -3,13 +3,13 @@ import styled from 'styled-components'
 export const CardBody = styled.div`
     height: 120px;
     margin-top: 15px;
-    -webkit-box-shadow: 5px 4px 0px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 5px 4px 0px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 0 15px #ddd;;
+    -moz-box-shadow: 0 0 15px #ddd;;
     padding-left: 30px;
     padding-right: 15px;
     background: #FFFFFF;
     box-sizing: border-box;
-    box-shadow: 5px 4px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 15px #ddd;;
     border-radius: 9px;
 `;
 
@@ -53,9 +53,9 @@ export const DeleteButton = styled.button`
     height: 30px;
     border: 1px solid gray;
     border-radius: 8px;
-    -webkit-box-shadow: 5px 4px 5px 0px rgba(171,162,171,1);
-    -moz-box-shadow: 5px 4px 5px 0px rgba(171,162,171,1);
-    box-shadow: 5px 4px 5px 0px rgba(171,162,171,1);
+    -webkit-box-shadow: 4px 3px 6px -2px rgba(171,162,171,1);
+    -moz-box-shadow: 4px 3px 6px -2px rgba(171,162,171,1);
+    box-shadow: 4px 3px 6px -2px rgba(171,162,171,1);
     outline: none;
     cursor: pointer;
 

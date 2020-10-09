@@ -57,9 +57,9 @@ export const Button = styled.button `
     height: 35px;
     border: 1px solid gray;
     border-radius: 20px;
-    -webkit-box-shadow: 5px 4px 5px 0px rgba(171,162,171,1);
-    -moz-box-shadow: 5px 4px 5px 0px rgba(171,162,171,1);
-    box-shadow: 5px 4px 5px 0px rgba(171,162,171,1);
+    -webkit-box-shadow: 4px 3px 6px -2px rgba(171,162,171,1);
+    -moz-box-shadow: 4px 3px 6px -2px rgba(171,162,171,1);
+    box-shadow: 4px 3px 6px -2px rgba(171,162,171,1);
     outline: none;
     cursor: pointer;
 
