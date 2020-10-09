@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
 `;
 
 export const ListContainer = styled.div`
-    height: 80%;
+    max-height: 80%;
     overflow-y: scroll;
     padding-right: 25px;
     padding-bottom: 15px;

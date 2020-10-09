@@ -1,4 +1,4 @@
-import httpClientApi from '../../../../core/httpClientApi';
+import httpClientApi from 'app/core/httpClientApi';
 
 export const getPeopleList = async () => {
     return httpClientApi.get('/people/');

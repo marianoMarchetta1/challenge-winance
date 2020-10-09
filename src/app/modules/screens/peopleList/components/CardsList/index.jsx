@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { getPeopleList, getPeoplePage, getPeopleFiltered } from '../../services/PeopleServices';
+import { getPeopleList, getPeoplePage, getPeopleFiltered } from 'app/modules/screens/peopleList/services/PeopleServices';
 import Card from '../Card';
 import SearchForm from '../SearchForm';
 import { Wrapper,
@@ -14,7 +14,7 @@ import { Wrapper,
          ErrorMessage,
          NoDataText} from './styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { SET_PEOPLE_LIST, SET_FETCHING, GET_PEOPLE_ERROR } from '../../../../redux/People/constants';
+import { SET_PEOPLE_LIST, SET_FETCHING, GET_PEOPLE_ERROR } from 'app/modules/redux/People/constants';
 import { GrNext as Next, GrPrevious as Previous } from 'react-icons/gr';
 
 const List = () => {
@@ -73,14 +73,14 @@ const List = () => {
             {!isFetching && list.length === 0 && !error ? <Container><NoDataText>There is no data</NoDataText></Container> : null }
             {isFetching ? <Spinner><SpinnerText>Loading...</SpinnerText></Spinner> : null}
             {error ? <Container><ErrorMessage>{errorMessage}</ErrorMessage></Container> : null}
-            <ButtonsContainer>
+            {next || previous ? <ButtonsContainer>
                 <Button disabled={!previous} onClick={() => getPage(previous)}>
                     <Previous/>
                 </Button>
                 <NextButton disabled={!next} onClick={() => getPage(next)}>
                     <Next/>
                 </NextButton>
-            </ButtonsContainer>
+            </ButtonsContainer> : null }
         </Wrapper>
     );
 }
